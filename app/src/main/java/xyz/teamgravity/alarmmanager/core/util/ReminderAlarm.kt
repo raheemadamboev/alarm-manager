@@ -9,7 +9,7 @@ import xyz.teamgravity.alarmmanager.core.receiver.ReminderReceiver
 import xyz.teamgravity.alarmmanager.data.model.ReminderModel
 import java.time.ZoneId
 
-class ReminderAlarmManager(
+class ReminderAlarm(
     private val context: Context,
     private val manager: AlarmManager,
 ) {
