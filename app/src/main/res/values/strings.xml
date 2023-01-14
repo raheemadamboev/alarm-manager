@@ -1,6 +1,11 @@
 <resources>
     <string name="app_name">AlarmManager</string>
 
+    <!-- Main -->
+    <string name="message">Message</string>
+    <string name="seconds_in_future">Seconds in future</string>
+    <string name="schedule">Schedule</string>
+
     <!-- ReminderNotification -->
     <string name="notification_reminder_name">Reminder Notification</string>
     <string name="notification_reminder_description">This channel is used to show reminder notification</string>
