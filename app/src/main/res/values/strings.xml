@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">AlarmManager</string>
+
+    <!-- ReminderNotification -->
+    <string name="notification_reminder_name">Reminder Notification</string>
+    <string name="notification_reminder_description">This channel is used to show reminder notification</string>
 </resources>
