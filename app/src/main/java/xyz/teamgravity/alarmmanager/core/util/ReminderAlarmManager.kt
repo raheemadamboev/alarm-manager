@@ -4,6 +4,7 @@ import android.app.AlarmManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
+import xyz.teamgravity.alarmmanager.core.extension.hasExactAlarmPermission
 import xyz.teamgravity.alarmmanager.core.receiver.ReminderReceiver
 import xyz.teamgravity.alarmmanager.data.model.ReminderModel
 import java.time.ZoneId
@@ -18,7 +19,7 @@ class ReminderAlarmManager(
     ///////////////////////////////////////////////////////////////////////////
 
     fun schedule(reminder: ReminderModel) {
-        if (Helper.hasExactAlarmPermission(manager)) {
+        if (manager.hasExactAlarmPermission()) {
             val intent = Intent(context, ReminderReceiver::class.java).apply {
                 action = ReminderReceiver.ACTION_REMINDER_NOTIFICATION
                 putExtra(ReminderReceiver.KEY_MESSAGE, reminder.message)
@@ -31,7 +32,7 @@ class ReminderAlarmManager(
             )
             manager.setExactAndAllowWhileIdle(
                 AlarmManager.RTC_WAKEUP,
-                reminder.time.atZone(ZoneId.systemDefault()).toEpochSecond() * 1000,
+                reminder.time.atZone(ZoneId.systemDefault()).toEpochSecond() * 1_000L,
                 pendingIntent
             )
         }
