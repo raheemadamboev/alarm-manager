@@ -1,4 +1,4 @@
-package xyz.teamgravity.alarmmanager.ui.theme
+package xyz.teamgravity.alarmmanager.presentation.theme
 
 import androidx.compose.ui.graphics.Color
 
