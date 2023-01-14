@@ -31,6 +31,14 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
+        <receiver
+            android:name=".core.receiver.ReminderReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="xyz.teamgravity.alarmmanager.ACTION_REMINDER_NOTIFICATION" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
